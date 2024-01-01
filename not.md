@@ -29,5 +29,39 @@ takeWhile metodu, Java Stream API'de bir ak??taki ??eleri belirli bir ko?ul sa?l
 -dropwhile
 dropWhile metodu, bir Java Stream'inde belirli bir ko?ulu sa?lad??? s?rece ??eleri atlamak i?in kullan?l?r. Ak??taki ??eler, belirtilen ko?ulun ge?erli oldu?u s?rece atlan?r ve ko?ul ge?ersiz hale geldi?inde atlam i?lemi sona erer, geri kalan ??elerle devam edilir.
 
+-count
+Java Stream API'deki count() metodu, bir ak???n i?indeki ??elerin say?s?n? d?nd?ren terminal bir i?lemdir. Bu metot, bir ak???n elemanlar?n?n toplam say?s?n? elde etmek i?in kullan?l?r.
 
+-foreach
+Bu metodun amac?, bir ak???n her eleman? ?zerinde belirli bir i?lemi ger?ekle?tirmektir. Yani, Stream i?inde d?ng? yapmak i?in kullan?l?r. Her eleman ?zerinde belirtilen bir lambda ifadesi veya metod referans? uygulanarak i?lem ger?ekle?tirilir.
+
+-toArray
+Java Stream API'deki toArray metodu, bir ak??taki elemanlar? bir diziye d?n??t?rmek i?in kullan?l?r. Bu metod, ak??taki elemanlar? i?eren bir dizi olu?turur ve bu diziyi d?nd?r?r.
+
+-min
+Java Stream API'deki min metodu, bir ak??taki elemanlar?n minimum de?erini bulmak i?in kullan?l?r.
+
+-max
+bir ak??taki elemanlar?n max de?erini bulmak i?in kullan?l?r.
+
+=anyMatch
+Java Stream API'deki anyMatch metodu, bir ak???n elemanlar?ndan en az birinin belirli bir ko?ulu sa?lay?p sa?lamad???n? kontrol etmek i?in kullan?l?r.
+
+-allmatch
+"allMatch(), ak??taki t?m elemanlar?n ko?ulu sa?lay?p sa?lamad???n? kontrol eder."
+
+-noneMatch
+"noneMatch(), ko?ulu sa?layan hi?bir eleman?n olup olmad???n? kontrol eder."
+
+-findfirst
+"findFirst(), ak??taki ilk giri? i?in bir Optional d?nd?r?r; elbette ki bu Optional bo? olabilir."
+
+-findAny
+Java Stream API'deki findAny metodu, bir ak??taki elemanlardan herhangi birini (random bir ?ekilde) bulmak i?in kullan?l?r. Bu metot, elemanlar?n s?ras?z bir ?ekilde i?lendi?i paralel ak??larda ?zellikle kullan??l?d?r. findAny metodu bir Optional nesnesi d?nd?r?r; bu nesne, eleman?n bulunup bulunmad???n? belirtir.
+
+-reduce
+??
+
+-collect
+Java Stream API'deki collect metodu, bir ak??tan elde edilen elemanlar? toplamak ve belirli bir koleksiyona eklemek i?in kullan?l?r. Bu metodun kullan?m?, ak??taki elemanlar? toplamak, gruplamak, s?ralamak veya ba?ka bir ?ekilde bir araya getirmek i?in ?ok ?e?itli i?lemleri destekler.
 
