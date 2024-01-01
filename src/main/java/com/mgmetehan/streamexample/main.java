@@ -48,6 +48,18 @@ public class main {
         //main.skip(animals);
         //main.takeWhile();
         //main.dropWhile();
+        //main.count(animals);
+        //main.forEach(animals);
+        //main.toArray(animals);
+        //main.min(animals);
+        //main.max(animals);
+        //main.anyMatch(animals);
+        //main.allMatch(animals);
+        //main.noneMatch(animals);
+        //main.findFirst(animals);
+        //main.findAny(animals);
+        //main.reduce(animals);
+        main.collect(animals);
     }
 
     private void filter(List<Animal> animals) {
@@ -164,5 +176,95 @@ public class main {
                 .collect(Collectors.toList());
 
         System.out.println(result);
+    }
+
+    private void count(List<Animal> animals) {
+        long count = animals.stream()
+                .count();
+
+        System.out.println(count);
+    }
+
+    private void forEach(List<Animal> animals) {
+        animals.stream()
+                .forEach(animal -> System.out.print(animal.getName() + "-"));
+    }
+
+    private void toArray(List<Animal> animals) {
+        Animal[] animalsArray = animals.stream()
+                .filter(animal -> animal.getAge() > 10)
+                .toArray(Animal[]::new);
+
+        Arrays.stream(animalsArray)
+                .forEach(animal -> System.out.print(animal.getName() + "-"));
+    }
+
+    private void min(List<Animal> animals) {
+        var collect = animals.stream()
+                .min(Comparator.comparing(Animal::getAge))
+                .orElseThrow();
+
+        System.out.println(collect.getName() + "-" + collect.getAge());
+    }
+
+    private void max(List<Animal> animals) {
+        var collect = animals.stream()
+                .max(Comparator.comparing(Animal::getAge))
+                .orElseThrow();
+
+        System.out.println(collect.getName() + "-" + collect.getAge());
+    }
+
+    private void anyMatch(List<Animal> animals) {
+        boolean anyMatch = animals.stream()
+                .anyMatch(animal -> animal.getAge() > 10);
+
+        System.out.println(anyMatch);
+    }
+
+    private void allMatch(List<Animal> animals) {
+        boolean allMatch = animals.stream()
+                .allMatch(animal -> animal.getAge() > 10);
+
+        System.out.println(allMatch);
+    }
+
+    private void noneMatch(List<Animal> animals) {
+        boolean noneMatch = animals.stream()
+                .noneMatch(animal -> animal.getAge() > 10);
+
+        System.out.println(noneMatch);
+    }
+
+    private void findFirst(List<Animal> animals) {
+        var collect = animals.stream()
+                .findFirst()
+                .orElseThrow();
+
+        System.out.println(collect.getName() + "-" + collect.getAge());
+    }
+
+    private void findAny(List<Animal> animals) {
+        var collect = animals.stream()
+                .findAny()
+                .orElseThrow();
+
+        System.out.println(collect.getName() + "-" + collect.getAge());
+    }
+
+    private void reduce(List<Animal> animals) {
+        var collect = animals.stream()
+                .map(Animal::getAge)
+                .reduce(0,(Integer::sum));
+
+        System.out.println(collect);
+    }
+
+    private void collect(List<Animal> animals) {
+        var collect = animals.stream()
+                .map(Animal::getAge)
+                .collect(Collectors.toList());
+
+        System.out.println(collect);
     }
 }
